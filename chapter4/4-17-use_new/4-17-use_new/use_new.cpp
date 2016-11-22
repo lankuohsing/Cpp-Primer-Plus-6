@@ -1,6 +1,7 @@
 #include<iostream>
 int main ( )
 {
+	//11.22 23£º23
 	using namespace std;
 	int nights = 1001;
 	int * pt = new int;
