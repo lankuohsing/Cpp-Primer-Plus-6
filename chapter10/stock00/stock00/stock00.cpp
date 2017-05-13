@@ -1,15 +1,14 @@
-#pragma once
-#pragma execution_character_set("utf-8")
 //stock00.coo -- implementing the Stock class
 //version 00
 #include <iostream>
 #include "stock00.h"
+using namespace std;
 void Stock::acquire ( const std::string & co, long n, double pr )
 {
 	company = co;
 	if ( n < 0 )
 	{
-		std::cout << "Number of shares can't be negative;"
+		cout << "Number of shares can't be negative;"
 			<< company << " shares set to 0.\n";
 		shares = 0;
 	}
@@ -25,7 +24,7 @@ void Stock::buy ( long num, double price )
 {
 	if ( num < 0 )
 	{
-		std::cout << "Number of shares purchased can't be negative. "
+		cout << "Number of shares purchased can't be negative. "
 			<<  " Transaction is aborted.\n";
 	}
 	else
@@ -40,7 +39,7 @@ void Stock::sell ( long num, double price )
 	using std::cout;//ÀûÓÃusingÉùÃ÷
 	if ( num < 0 )
 	{
-		std::cout << "Number of shares sold can't be negative. "
+		cout << "Number of shares sold can't be negative. "
 			<< " Transaction is aborted.\n";
 	}
 	else if ( num>shares )
@@ -63,7 +62,7 @@ void Stock::update ( double price )
 }
 void Stock::show ( )
 {
-	std::cout << "Company: " << company
+	cout << "Company: " << company
 		<< " Shares: " << shares << '\n'
 		<< " Shares Price: $" << share_val
 		<< " Total Worth: $" << total_val << '\n';
