@@ -21,7 +21,7 @@ using namespace std;
 } 
 int main()  
 {  
-	string filename="D://GitLab//ocr-train-ticket//inferencelist1.txt";
+	string filename="D://GitLab//ocr-train-ticket//points1.txt";
     ifstream in(filename);  
       
     string line;  
@@ -32,12 +32,19 @@ int main()
         {   
             cout << line << endl; 
 			
-			vector<string>line_split;
-			SplitString(line,line_split,"/");
-			for (int j = 0; j < line_split.size(); j++)
+			vector<string>points_vector;
+			SplitString(line,points_vector," ");
+			vector<vector<string>>points_xy;
+			for (int i = 0; i < points_vector.size(); i++)
 			{
-				cout<<line_split[j]<<endl;
+				vector<string>points_i_xy;
+				SplitString(points_vector[i],points_i_xy,",");
+				points_xy.push_back(points_i_xy);
+				int x=atoi(points_xy[i][0].c_str());
+				int y=atoi(points_xy[i][1].c_str());
+				cout<<x<<","<<y<<endl;
 			}
+			cout<<endl;
         }  
     }  
     else // 没有该文件  
