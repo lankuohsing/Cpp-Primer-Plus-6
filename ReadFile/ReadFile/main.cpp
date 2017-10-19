@@ -21,7 +21,40 @@ using namespace std;
 } 
 int main()  
 {  
+	string filename_points="D://GitLab//ocr-train-ticket//points1.txt";
+	ifstream in_points(filename_points);  
+	string line_points; 
+	vector<string>points_str;
+	vector<vector<float>>points_xy_vector;
+	if(in_points)
+	{
+		while (getline (in_points, line_points))
+		{
+			
+			cout << line_points << endl; 
+			
+			vector<string>points_vector;//空格隔开，每个点的坐标
+			SplitString(line_points,points_vector," ");
+			vector<float>points_xy;
+			for (int i = 0; i < points_vector.size(); i++)
+			{
+				vector<string>points_i_xy;
+				SplitString(points_vector[i],points_i_xy,",");
+				points_xy.push_back(atoi(points_i_xy[0].c_str()));
+				points_xy.push_back(atoi(points_i_xy[1].c_str()));
+				//int x=atoi(points_xy[i][0].c_str());
+				//int y=atoi(points_xy[i][1].c_str());
+				//cout<<x<<","<<y<<endl;
+			}
+			points_xy_vector.push_back(points_xy);
+
+			
+		}
+	}
+	
+	/*
 	string filename="D://GitLab//ocr-train-ticket//points1.txt";
+
     ifstream in(filename);  
       
     string line;  
@@ -47,10 +80,19 @@ int main()
 			cout<<endl;
         }  
     }  
+	*/
     else // 没有该文件  
     {  
         cout <<"no such file" << endl;  
     }  
+	for (int i = 0; i < points_xy_vector.size(); i++)
+	{
+		for (int j = 0; j < points_xy_vector[i].size(); j++)
+		{
+			cout<<points_xy_vector[i][j]<<",";
+		}
+		cout<<endl;
+	}
 	system("pause");
     return 0;  
 }  
