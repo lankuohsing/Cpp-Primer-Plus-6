@@ -21,6 +21,10 @@ using namespace std;
 } 
 int main()  
 {  
+	string str="";
+	if(str=="")cout<<"str is NULL!"<<endl;
+	cout<<str<<endl;
+	/*
 	string filename_points="D://GitLab//ocr-train-ticket//points1.txt";
 	ifstream in_points(filename_points);  
 	string line_points; 
@@ -51,7 +55,20 @@ int main()
 			
 		}
 	}
-	
+	else // 没有该文件  
+    {  
+        cout <<"no such file" << endl;  
+    } 
+	int count=0;
+	for (int i = 0; i < points_xy_vector.size(); i++)
+	{
+		for (int j = 0; j < points_xy_vector[i].size(); j++)
+		{
+			cout<<points_xy_vector[i][j]<<",";
+		}
+		cout<<endl;
+	}
+	*/
 	/*
 	string filename="D://GitLab//ocr-train-ticket//points1.txt";
 
@@ -80,19 +97,13 @@ int main()
 			cout<<endl;
         }  
     }  
-	*/
+	
     else // 没有该文件  
     {  
         cout <<"no such file" << endl;  
     }  
-	for (int i = 0; i < points_xy_vector.size(); i++)
-	{
-		for (int j = 0; j < points_xy_vector[i].size(); j++)
-		{
-			cout<<points_xy_vector[i][j]<<",";
-		}
-		cout<<endl;
-	}
+	*/
+	
 	system("pause");
     return 0;  
 }  
