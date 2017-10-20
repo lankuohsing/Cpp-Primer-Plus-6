@@ -20,10 +20,27 @@ using namespace std;
         v.push_back(s.substr(pos1));
 } 
 int main()  
-{  
+{  /*
 	string str="";
 	if(str=="")cout<<"str is NULL!"<<endl;
 	cout<<str<<endl;
+	*/
+	int a[]={1,2,3,4,5};
+	int size_a=sizeof(a)/sizeof(int);
+	cout<<size_a<<endl;
+	vector<int>b(a,a+size_a);
+	for(int i=0;i<b.size();i++)
+		cout<<b[i]<<" ";
+	cout<<endl;
+	vector<int>c(&a[0],&a[5]);
+	for(int i=0;i<c.size();i++)
+		cout<<c[i]<<" ";
+	cout<<endl;
+	vector<int>d;
+	d=b;
+	for(int i=0;i<d.size();i++)
+		cout<<d[i]<<" ";
+	cout<<endl;
 	/*
 	string filename_points="D://GitLab//ocr-train-ticket//points1.txt";
 	ifstream in_points(filename_points);  
