@@ -20,11 +20,26 @@ using namespace std;
         v.push_back(s.substr(pos1));
 } 
 int main()  
-{  /*
+{ 
+	size_t a;
+	a=0;
+	cout<<a<<endl;
+	/*
+	vector<int>a(5);
+	for (int i = 0; i < 5; i++)
+	{
+		a[i]=i;
+	}
+	for (int i = 0; i < a.size(); i++)
+	{
+		cout<<a[i]<<endl;;
+	}
+	*/
+	/*
 	string str="";
 	if(str=="")cout<<"str is NULL!"<<endl;
 	cout<<str<<endl;
-	*/
+	
 	int a[]={1,2,3,4,5};
 	int size_a=sizeof(a)/sizeof(int);
 	cout<<size_a<<endl;
@@ -41,6 +56,7 @@ int main()
 	for(int i=0;i<d.size();i++)
 		cout<<d[i]<<" ";
 	cout<<endl;
+	*/
 	/*
 	string filename_points="D://GitLab//ocr-train-ticket//points1.txt";
 	ifstream in_points(filename_points);  
